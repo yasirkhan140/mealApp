@@ -1,0 +1,37 @@
+#show-fav-page{
+    display: none;
+}
+
+#show-fav-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+
+}
+.main-heading-fav{
+    margin-top:3rem;
+}
+.name-favmeal{
+    font-size: 1.5rem;
+    position: relative;
+    left:1.1rem;
+}
+.remove-fav-btn{
+    font-size:1.3rem;
+    color:rgb(253, 153, 59);
+    position: relative;
+    left:11rem;
+    top:-3.5rem;
+    border:none;
+}
+#back-btn{
+    position: absolute;
+    left:1%;
+    top:2%;
+    border:none;
+    background-color: transparent;
+    font-size: 1.5em;
+    color:rgb(253, 153, 59); 
+    
+}

@@ -1,0 +1,101 @@
+/* styling of body */
+body{
+    text-align: center;
+    margin:0;
+    padding: 0;
+    background-image:url(../static_files/vecteezy_spices-for-use-as-cooking-ingredients-on-a-wooden-background_8919910_650.jpg);
+    background-repeat: repeat;
+    background-size: 100% inherit;
+    background-position: fixed;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* class for text color */
+.text{
+    color: rgb(253, 153, 59);
+}
+.view-fav-btn{
+    border:none;
+    background-color: transparent;
+    font-size:1.5rem;
+    position: absolute;
+    right:0.5%;
+    top:1.5%;
+    color:rgb(255, 174, 0);
+}
+#view-fav-btn:active{
+    transition: all 0.5s;
+    color:red;
+}
+#fav-btn-text{
+    display: block;
+}
+/* syling of main-heading (meal app)*/
+h1{
+    font-size: 2.4rem;
+}
+/* syyling of quote  */
+#quote{
+    color:rgb(253, 153, 59);
+    margin-bottom: 0;
+    font-weight: 700;
+}
+/* styling of author (yasir khan) */
+#author{
+    display: block;
+    color:rgb(255, 200, 149);
+    position:relative;
+    right:9.5rem;
+    margin-bottom: 5px;
+}
+/* syling of input  */
+#search-input{
+    display: inline-block;
+    width:500px;
+    height:2.5rem;
+    border-radius:40px 0 0 40px;
+    margin-right: 0px;
+    padding-right: 0px;
+    border:none;
+    font-size: larger;
+    color:rgb(231, 100, 24)
+}
+input:focus{
+    outline:none;
+}
+/* syling of search button */
+#search-btn{
+    display: inline-block;
+    margin: 0;
+    width:35px;
+    height: 2.6rem;
+    border: none;
+    border-radius: 0 40px 40px 0;
+    position: relative;
+    bottom: 0.12rem;
+    right:0.28rem;
+    background-color: rgb(253, 153, 59);
+}
+#search-btn:hover{
+    background-color: rgb(253, 200, 59);
+}
+
+
+
+
+
+
+@media screen and (max-width:700px ) {
+    #search-input{
+        width:400px;
+    }
+}
+
+@media screen and (max-width:450px ) {
+    #search-input{
+        width:300px;
+    }
+}
+
+
+

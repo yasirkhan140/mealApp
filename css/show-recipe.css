@@ -1,0 +1,138 @@
+/* show recipe conainer page styling */
+.text-white{
+    color:#ffffff;
+}
+/* get recipe page styling */
+#show-recipe{
+    position: fixed;
+    top:50%;
+    left:50%;
+    background-color: rgb(253, 153, 59);
+    width:90%;
+    height:90%;
+    transform: translate(-50%,-50%);
+    border-radius: 1.2rem;
+    overflow-y: scroll;
+    overflow-x:unset;
+    display: none;
+    padding:1.2rem 0;
+    z-index: 1;
+}
+#close-btn{
+    height:20px;
+    width:20px;
+    background-color:transparent;
+    border: none;
+    border-radius: 50%;
+    font-size:x-large;
+    position: absolute;
+    left:96.5%;
+    top:2px;
+}
+#close-btn:hover{
+    transition: all 0.5s;
+    transform: scale(1.05);
+    color:rgb(0, 0, 0);
+}
+
+#show-recipe::-webkit-scrollbar{
+    width: 10px;
+}
+#show-recipe::-webkit-scrollbar-thumb{
+    background:#ffffff;
+    border-radius: 1.2rem;
+}
+#recipe-name{
+   margin-bottom:0;
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+#category-name{
+    margin:2px;
+}
+#instruction-heading{
+    margin:5px;
+    padding:1px;
+}
+#recipe-instruction{
+    margin:6px;
+    font-size: 1.5rem;
+    padding: 4px;
+}
+#youtube-link{
+    text-decoration: none;
+
+}
+#youtube-link img{
+    margin:20px 20px 0 20px;
+    padding:5px;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    text-decoration: none;
+    user-select: none;
+}
+#youtube-link p:hover{
+    transition: all 0.5s;
+    color:blue;
+    user-select: initial;
+}
+
+@media screen and (max-width:1400px){
+    #close-btn{
+        left:96%
+    }
+}
+@media screen and (max-width:1250px){
+    #close-btn{
+        left:95.5%
+    }
+}
+@media screen and (max-width:1070px){
+    #close-btn{
+        left:94.5%
+    }
+}
+@media screen and (max-width:900px){
+    #close-btn{
+        left:92.5%
+    }
+}
+
+
+
+
+@media screen and (max-width:700px ) {
+    #show-recipe{
+        width:70%;
+    }
+    #close-btn{
+        left:90%;        
+    }
+}
+@media screen and (max-width:600px ) {
+    
+    #close-btn{
+        left:86%;        
+    }
+}
+@media screen and (max-width:450px ) {
+    #show-recipe{
+        width:80%;
+    }
+    #close-btn{
+        left:85%;
+        
+    }
+    #recipe-instruction{
+        margin-right: 9px;
+        padding-right: 3px;
+        margin-left: 9px;
+        padding-left: 3px;;
+    }
+}
+@media screen and (max-width:350px ) {
+    #close-btn{
+        left:75%;
+    }
+}

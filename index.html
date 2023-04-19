@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            Meal app
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel = "stylesheet" href= "css/index.css"></<link>
+        <link rel = "stylesheet" href= "css/meal-conrainer.css"></<link>
+        <link rel = "stylesheet" href= "css/show-recipe.css"></<link>
+        <link rel = "stylesheet" href = "css/fav-page.css">
+    </head>
+    
+    <body>
+        
+        <div id = "container-main">
+            <button class = "view-fav-btn" id ="view-fav-btn">
+                <i class="fa-sharp fa-solid fa-heart"></i>
+                <span id = "fav-btn-text"class =  "text">View favroite</span>
+            </button>
+            <h1 id="main-heading" class = "text">MEAL APP <br> on vanilla javascipt</h1>
+            <p id ="quote"  class = "text">The key to a good meal is simplicity and the right seasoning.</p>
+            <cite id="author">-Yasir khan</cite>
+
+            <div class = "search-box" id = "search-container">
+                <input type= 'text' id ="search-input" class  ="text">
+                <button type="sumbit" id ="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <h2 id = "result-heading" class = "text">Your search result:</h2>
+
+            
+
+            
+            <!-- to show a meals search result -->
+            <div id  ="meal-show-container">
+                <!-- <div class = "meal-container">
+                    <img src= "static_files/food-item.jpg" alt="dish">
+                    <h3>potato mash</h3>
+                    <button type = "sumbit" class ="fav-btn">
+                        <i class=" fa-regular fa-heart" ></i>
+                    </button>
+                    <button type = "" class ="get-recipe-btn"> 
+                        get recipe
+                    </button>
+                </div> -->
+                
+            </div>
+            
+        </div>
+        <!-- get recipe page  -->
+        <div id  = "show-recipe">
+
+            <button id  ="close-btn">
+                <i class="fa-sharp fa-regular fa-circle-xmark text-white" id= "close-btn"></i>
+            </button>
+            <div id = "show-recipe-container">
+
+                <!-- <div id ="recipe-heading-cont">
+                    <h2 id = "recipe-name" class ="text-white"> recipe-name</h2>
+                    <h4 id = "category-name" class ="text-white">category name</h4>
+                    <h2 id = "instructions-heading"class ="text-white">instructions heading</h2>
+                </div>
+
+                <div id ="para-instruction">
+                    <p id  ="recipe-instruction" class ="text-white"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum ipsa laborum fuga at non obcaecati saepe! Aliquam cumque sunt voluptates quo optio non? Distinctio, quibusdam possimus reprehenderit necessitatibus libero totam.</p>
+                </div>
+
+                <div>
+                    <a href  ="" id ="youtube-link" class ="text-white">
+                        <img src ="static_files/vecteezy_food-background-food-menu-backround_14533892_440.jpg" alt = 'dish'/>
+                        <p>click here to watch video</p>
+                    </a>
+                </div> -->
+
+            </div>
+        </div>
+
+        <!-- to show a fav list  -->
+        <div id = "show-fav-page">
+            <div class = "fav-page-static">
+                <h1 class= "main-heading-fav text"> Favorite meals list</h1>
+                <button id = "back-btn">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div id = "show-fav-list">
+                <!-- <div class = "meal-container">
+                    <img src= "static_files/food-item.jpeg" alt="dish">
+                    <h3 class = "name-favmeal text">Potato mash</h3>
+                    <button type = "sumbit" class ="remove-fav-btn"id = "remove-btn">
+                        <i class="fa fa-trash" ></i>
+                    </button>
+                    <button type = "" class ="get-recipe-btn"> 
+                        Get recipe
+                    </button>
+                </div> -->
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+        <script src="https://kit.fontawesome.com/54a764751d.js" crossorigin="anonymous"></script>
+        <script src= "/script.js"></script>
+    </body>
+</html>
