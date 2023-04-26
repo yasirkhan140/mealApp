@@ -13,6 +13,7 @@ var getRecipeBtn = document.getElementsByClassName("get-recipe-btn");
 var favBtn = document.getElementsByClassName("fav-btn")
 var deleteBtn = document.getElementsByClassName("remove-fav-btn");
 var showFavMeal = document.getElementById("show-fav-list");
+Console.log("linked script.js");
 
 // add event listener to search btn click and call getMeal function
 searchBtn.addEventListener('click', getMeal);
