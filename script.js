@@ -1,4 +1,4 @@
-
+console.log("linked scirpt");
 // get element from the html document.
 var searchBtn = document.getElementById("search-btn");
 var mealList = document.getElementById("meal-show-container");
@@ -13,7 +13,6 @@ var getRecipeBtn = document.getElementsByClassName("get-recipe-btn");
 var favBtn = document.getElementsByClassName("fav-btn")
 var deleteBtn = document.getElementsByClassName("remove-fav-btn");
 var showFavMeal = document.getElementById("show-fav-list");
-Console.log("linked script.js");
 
 // add event listener to search btn click and call getMeal function
 searchBtn.addEventListener('click', getMeal);
@@ -36,7 +35,10 @@ function getMeal(){
             if(getFavID!=null){
                 for(var i=0;i<getFavID.length;i++){
                     if(e.idMeal==getFavID[i]){
-                        btn='';
+                        btn='\n\
+                        <button type = "sumbit" class ="remove-fav-btn"id ='+e.idMeal+'>\n\
+                        <i class="fa fa-trash" ></i>\n\
+                        </button>';
                         break;
                     }else{
                         btn= '\n\
@@ -88,6 +90,11 @@ function getMeal(){
                 addFav(this);
             }) 
         }
+        for(var i=0;i<deleteBtn.length;i++){
+            deleteBtn[i].addEventListener("click",function(){
+                deleteFavMeal(this);
+            })
+        }
          
            
     })
@@ -112,6 +119,8 @@ function addFav(event){
     old_data.push(getMealId);
     // store the all data to localstorge
     localStorage.setItem("favID",JSON.stringify(old_data));
+// to change the fav to delte btn on mal box.
+    getMeal();
 
     
     
@@ -196,7 +205,6 @@ function deleteFavMeal(event){
     let getMealId= event.id.trim();
     // get the data from localstorge 
     var getFavID = JSON.parse(localStorage.getItem("favID"));
-    console.log(getFavID);
     // remove the all data from local stroage
     localStorage.removeItem("favID");
     // check for the meal is present in the fav page.
@@ -216,7 +224,17 @@ function deleteFavMeal(event){
             // store the all data to localstorge
             localStorage.setItem("favID",JSON.stringify(old_data));
             // call the function again to view the fav page.
+            
+            
+        }
+        // if fav is open then call the function viewFavPage to refreah the item.
+        if(favPage.style.display=="block"){
             viewFavPage();
+            console.log("yes fav in block")
+            // else main is open then call the function getMeal to get delete btn to fav btn on meal box.
+        }else{
+            console.log("main page in block")
+            getMeal();
         }
     }
 }
@@ -224,7 +242,6 @@ function deleteFavMeal(event){
 // function to get the recuipe page to view extra more
 function getRecipe(event){
     showRecipePage.style.display="block";
-    console.log(event);
     // get the id of meal from html id of button which is clicked
     let getMealId= event.id.trim();
     // fetch the data from the api by id
