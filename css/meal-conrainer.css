@@ -24,11 +24,13 @@
 .fav-btn{
     border:none;
     position: relative;
+    top:1px;
     left:55%;
     width: 20px;
     font-size:x-large;
     z-index: 0;
     color:rgb(253, 153, 59);
+    background-color: beige;
 }
 
 .fav-btn:hover{
@@ -53,6 +55,9 @@
 }
 .get-recipe-btn:hover{
     background-color: rgb(233, 121, 16);
+}
+.get-recipe-btn:active{
+    background-color:crimson;
 }
 .hide-idMeal{
     display: none;

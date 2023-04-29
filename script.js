@@ -31,15 +31,18 @@ function getMeal(){
            data.meals.forEach(e => {
             // html element to render with data for each meal.
             let getFavID = JSON.parse(localStorage.getItem("favID"));
+            // btn assign for change the fav to delte btn.
             let btn = '';
             if(getFavID!=null){
                 for(var i=0;i<getFavID.length;i++){
+                    // if meal is in fav list then fav btn change to delte btn.
                     if(e.idMeal==getFavID[i]){
                         btn='\n\
                         <button type = "sumbit" class ="remove-fav-btn"id ='+e.idMeal+'>\n\
                         <i class="fa fa-trash" ></i>\n\
                         </button>';
                         break;
+                        // if not in fav list then btn change to fav btn
                     }else{
                         btn= '\n\
                         <button type = "sumbit" class ="fav-btn" id ='+e.idMeal+'> \n\
@@ -48,6 +51,7 @@ function getMeal(){
                         '
                     }
                 }
+            // if localstorage is null then btn change to fav btn.
             }else{
                 btn= '\n\
                 <button type = "sumbit" class ="fav-btn" id ='+e.idMeal+'> \n\
@@ -55,6 +59,7 @@ function getMeal(){
                 </button> \n\
                 '
             }
+            // change the html value with meal data
                 html += '\n\
                 <div class = "meal-container">\n\
                     <img src= '+e.strMealThumb+' alt="dish" id  = "meal-img"> \n\
@@ -90,6 +95,7 @@ function getMeal(){
                 addFav(this);
             }) 
         }
+        // add event listerner for delte btn on main page if meal is added on fav list
         for(var i=0;i<deleteBtn.length;i++){
             deleteBtn[i].addEventListener("click",function(){
                 deleteFavMeal(this);
@@ -105,9 +111,9 @@ function getMeal(){
 // function to add meal in fav list 
 function addFav(event){
     
-    
+    // get the meal id
     let getMealId = event.id.trim();
-    // add a fav meal id to array 
+
     
     
     // if localstrege not have a data
@@ -119,7 +125,7 @@ function addFav(event){
     old_data.push(getMealId);
     // store the all data to localstorge
     localStorage.setItem("favID",JSON.stringify(old_data));
-// to change the fav to delte btn on mal box.
+// to change the fav to delte btn on mal box call the getMeal.
     getMeal();
 
     
@@ -129,11 +135,13 @@ function addFav(event){
 
 // onclick close btn of recipe page
 closeBtn.onclick=function(){
+    // get recipe page hide 
     showRecipePage.style.display="none"
 }
 
 // on click the back on fav page 
 backBtn.onclick=function(){
+    // favpage hide and show mainpage
     favPage.style.display="none";
     mainPage.style.display= "block";
 
@@ -144,8 +152,10 @@ viewFavBtn.addEventListener("click",function(){
     viewFavPage()
 })
 function viewFavPage(){
+    // hide the main page and display a favPage 
     mainPage.style.display="none";
     favPage.style.display="block";
+    // get all list of id from localStorge.
     var getFavID = JSON.parse(localStorage.getItem("favID"));
     let html = "";
     if(getFavID!=null){
@@ -156,7 +166,7 @@ function viewFavPage(){
             // data came from api
             .then(data=>{
             
-                
+                // if data is found
                 if(data.meals){
                     data.meals.forEach(meal=>{
                         html+='\n\
@@ -173,6 +183,7 @@ function viewFavPage(){
                     })
                     
                 }
+                // showFavMeal inner html change and show all meal list in fav list 
                 showFavMeal.innerHTML=html 
                 
                 
@@ -185,7 +196,7 @@ function viewFavPage(){
                 }
                 // get recipe btn in fav page add listerner to view a recipe page
                 for(var i =0;i<getRecipeBtn.length;i++){
-                    
+                    // on click the get recipe btn call the getRecipe function.
                     getRecipeBtn[i].addEventListener("click",function(){ 
                         getRecipe(this)
                     });
@@ -193,6 +204,7 @@ function viewFavPage(){
             })  
         }
     }
+    // if not any fav meal in the list then show no fav meal.
     showFavMeal.innerHTML='<h1 class = "text-white"> No favorite meal</h1>';
        
     
@@ -231,11 +243,11 @@ function deleteFavMeal(event){
         if(favPage.style.display=="block"){
             viewFavPage();
             console.log("yes fav in block")
-            // else main is open then call the function getMeal to get delete btn to fav btn on meal box.
-        }else{
-            console.log("main page in block")
-            getMeal();
+            
         }
+        // else main is open then call the function getMeal to get delete btn to fav btn on meal box.
+        getMeal();
+        
     }
 }
 
@@ -250,11 +262,12 @@ function getRecipe(event){
     .then(response=>response.json())
     // data came from api
     .then(data=>{
+        // variable html to change the inner html in futher
         let renderHtml = "";
         if(data.meals){
             // meal data array [0]
             let meal= data.meals[0];
-            // update the html with data of recipe
+            // update the renderHtml with data of recipe
             renderHtml+=' \n\
             <div id ="recipe-heading-cont"> \n\
             <h2 id = "recipe-name" class ="text-white"> '+meal.strMeal+'</h2> \n\

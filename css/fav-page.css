@@ -1,3 +1,4 @@
+/* styling for fav list page */
 #show-fav-page{
     display: none;
 }
@@ -22,8 +23,16 @@
     color:rgb(253, 153, 59);
     position: relative;
     left:11rem;
-    top:-3.5rem;
+    top:-3.1rem;
     border:none;
+    background-color: beige;
+}
+.remove-fav-btn:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+}
+.remove-fav-btn:active{
+    color:black;
 }
 #back-btn{
     position: absolute;

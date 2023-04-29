@@ -3,7 +3,7 @@ body{
     text-align: center;
     margin:0;
     padding: 0;
-    background-image:url(../static_files/vecteezy_spices-for-use-as-cooking-ingredients-on-a-wooden-background_8919910_650.jpg);
+    background-image:url("../static_files/vecteezy_spices-for-use-as-cooking-ingredients-on-a-wooden-background_8919910_650.jpg");
     background-repeat: repeat;
     background-size: 100% inherit;
     background-position: fixed;
@@ -67,9 +67,9 @@ input:focus{
 #search-btn{
     display: inline-block;
     margin: 0;
-    width:35px;
-    height: 2.6rem;
-    border: none;
+    width:38px;
+    height: 2.7rem;
+    border:none;
     border-radius: 0 40px 40px 0;
     position: relative;
     bottom: 0.12rem;
