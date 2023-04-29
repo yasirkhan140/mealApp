@@ -89,11 +89,27 @@ input:focus{
     #search-input{
         width:400px;
     }
+    .view-fav-btn{
+        font-size: 1.1rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    #quote{
+        font-size:95%;
+    }
 }
 
 @media screen and (max-width:450px ) {
     #search-input{
         width:300px;
+    }
+    .view-fav-btn{
+        top:1%;
+        right:0.2%
+    }
+    #fav-btn-text{
+        display: none;
     }
 }
 
